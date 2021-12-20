@@ -1,0 +1,19 @@
+.navBar{
+    flex-wrap: nowrap;
+    align-items:  center;
+    justify-content: center;
+    padding-top: 10%;
+}
+img{
+    margin: 20px 0 0 50px;
+    width: 150px;
+
+}
+.boton{
+    font-size: 15px;
+    width: 100px;
+}
+.titulo{
+    color: grey;
+    padding-top: 3%;
+}
