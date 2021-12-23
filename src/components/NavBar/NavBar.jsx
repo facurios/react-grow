@@ -1,6 +1,8 @@
 import React from 'react'
-import logo from '../img/logo.png'
+import logo from '../../img/logo.png' 
+import CartWidget from './CartWidget'
 import './NavBar.css'
+
 function NavBar() {
     return (
         <div className='row' >
@@ -13,6 +15,7 @@ function NavBar() {
                     <button className='btn btn-primary boton'>Primary</button>
                     <button className='btn btn-success boton' >Sustratos</button>
                     <button className='btn btn-danger boton' >Aditivos</button>
+                    <button className='btn btn-secondary boton' ><CartWidget/> </button>
                 </div>
             </div>
             <div className='col-md-4 titulo'>

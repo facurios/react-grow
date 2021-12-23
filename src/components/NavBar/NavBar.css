@@ -12,6 +12,7 @@ img{
 .boton{
     font-size: 15px;
     width: 100px;
+    margin-left: 5px;
 }
 .titulo{
     color: grey;
