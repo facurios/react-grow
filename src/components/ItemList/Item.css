@@ -1,0 +1,14 @@
+div{
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+center{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.imgProd{
+    border: solid 1px rgb(184, 184, 184);
+    align-self: center;
+    left: 10px;
+}

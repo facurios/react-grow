@@ -1,40 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import { getFetch } from './ItemList'
+import React from 'react'
+
+import './Item.css'
 
 
+function Item({producto}) {
 
-function Item() {
-    const [productos, setProductos]= useState([])
-    const [loanding, setLoanding]= useState(true)
-    useEffect(() => {
-        getFetch
-        .then(resp => setProductos(resp))
-        .catch(err=>console.log(err))
-        .finally(()=> setLoanding(false))
-    },[]
-
-    )
-
-    console.log(productos)
     return (
-        <div>
-            { loanding ? <h2>Cargando...</h2> :
-            productos.map(prod =>
-                <center>
-                    <div className='card col-md-4'>
-                        <img src={prod.img} className='card-img-top'/>
-                        <div className='card-body'>
-                            <h5 className='card-title'>{prod.nombre}</h5>
-                            <p className="card-text">{prod.desc}</p>
-                        </div>
-                    
+        <div key={producto.id}>
+            <center >
+                <div className='card col-2' >
+                    <div class="card-header col-12"> 
+                        <h5 className='card-title'>{producto.tipo}</h5>
                     </div>
-                </center>
-                    
-
-               
-
-             )}
+                    <div className='card-img-top'>
+                        <img src={producto.img} className='imgProd' alt='IMAGEN' style={{ width: 100}}/>
+                    </div>
+                    <div className='card-body col-12'> 
+                        <h5 className='card-title'>{producto.nombre}</h5>
+                        <p className="card-text">{producto.desc}</p>
+                    </div>
+                    <div className='card-footer col-12'>
+                        <button className='btn btn-primary' > Ver Producto </button>
+                    </div>
+                </div>
+            </center>
         </div>
     )
 }

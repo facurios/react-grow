@@ -12,10 +12,13 @@ function ItemCount({stock,initial}) {
 }
 
     return (
-        <div className='centrar'>
-            <h2>{contador}</h2>
-            <button onClick={handleresta} className='btn btn-danger btn-lg'>-</button>
-            <button onClick={handlesuma} className='btn btn-primary btn-lg'>+</button>
+        <div className='centrar row'>
+            <div >
+                <h6>{contador}</h6>
+                <button onClick={handleresta} className='btn btn-danger btn-sm'>-</button><button onClick={handlesuma} className='btn btn-primary btn-sm'>+</button>
+
+            </div>
+            
         </div>
     )
 }
