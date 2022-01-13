@@ -9,6 +9,6 @@ center{
 }
 .imgProd{
     border: solid 1px rgb(184, 184, 184);
-    align-self: center;
-    left: 10px;
+    margin-left: 0px;
+    
 }

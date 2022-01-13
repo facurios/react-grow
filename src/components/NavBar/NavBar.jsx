@@ -1,3 +1,4 @@
+import { Link, NavLink } from 'react-router-dom'
 import React from 'react'
 import logo from '../../img/logo.png' 
 import CartWidget from './CartWidget'
@@ -6,20 +7,21 @@ import './NavBar.css'
 function NavBar() {
     return (
         <div className='row' >
-            <div className='col-md-2'>
+            <Link to='/' className='col-md-2'>
                 <img src={logo} alt="" />
-            </div>
+            </Link>
             <div className='col-md-8'>
-                <div className='row navBar'>
-                    <button className='btn btn-primary boton'>Parafernalia</button>
-                    <button className='btn btn-success boton' >Sustratos</button>
-                    <button className='btn btn-danger boton' >Aditivos</button>
+                <div className='navBar'>
+                    <NavLink to={`/categoria/parafernalia`} className='btn btn-primary boton'>Parafernalia</NavLink>
+                    <NavLink to={`/categoria/sustrato`} className='btn btn-success boton' >Sustratos</NavLink>
+                    <NavLink to={`/categoria/aditivos`} className='btn btn-danger boton' >Aditivos</NavLink>
                 </div>
             </div>
-            
-            <div className='col-md-2 '>
-                <button className='btn btn-secondary boton' ><CartWidget/> </button>
-            </div>
+                <Link className='col-md-2 ' to='cart'>
+                    <CartWidget/>
+                </Link>
+                    
+                
         </div>
     )
 }

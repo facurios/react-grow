@@ -8,7 +8,7 @@ function ItemDetail({producto}) {
                 <div className="card mb-3" style={{width:900}}>
                 
                     <div className="row g-0">
-                        <div class="card-header">
+                        <div className="card-header">
                             {producto.tipo}
                         </div>
                         <div className="col-md-4">
@@ -27,7 +27,7 @@ function ItemDetail({producto}) {
 
                             </div>
                             <div>
-                            <button type="button" class="btn btn-primary">Agregar</button><button type="button" class="btn btn-success">Comprar</button>
+                            <button type="button" className="btn btn-primary">Agregar</button><button type="button" className="btn btn-success">Comprar</button>
                             </div>
                         </div>
                     </div>
