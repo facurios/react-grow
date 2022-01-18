@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCount from '../../Count/ItemCount'
+import { Link } from 'react-router-dom'
+
+
 
 function ItemDetail({producto}) {
+    const [mostrar, setMostrar] = useState(true)
+    const onAdd = (cant) => {
+        setMostrar(false)
+        alert(cant)
+        //agregarAlCarrito({...producto, cantidad: cant})
+    }
+
     return (
         <div className='row'>
             <center >
@@ -18,17 +28,18 @@ function ItemDetail({producto}) {
                             <div className="card-body">
                                 <h5 className="card-title">{producto.nombre}</h5>
                                 <p className="card-text">{producto.desc}</p>
-                                <p className="card-text">Stock 10</p>
+                                <p className="card-text">Stock {producto.stock}</p>
                             </div>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                             <div className="card-body">
-                                <ItemCount stock={10} initial={1}/>
-
+                                {mostrar ? <ItemCount item={producto} onAdd={onAdd} /> :
+                                <div>
+                                    <Link to='/cart'><button type="button" className="btn btn-primary">Finalizar Compra</button></Link>
+                                    <Link to='/'><button type="button" className="btn btn-success">Seguir Compra</button></Link>
+                                </div>}
                             </div>
-                            <div>
-                            <button type="button" className="btn btn-primary">Agregar</button><button type="button" className="btn btn-success">Comprar</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

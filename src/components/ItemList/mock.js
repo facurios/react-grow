@@ -7,7 +7,8 @@ const productos =[
         "tipo": "parafernalia",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis unde quibusdam ratione rerum quia, odio quidem eveniet officiis aliquam",
         "precio": 1200,
-        "img": "/imagenes/productos/combo1.jpg"
+        "img": "/imagenes/productos/combo1.jpg",
+        "stock": 10,
     },
     {
         "id": "2",
@@ -15,7 +16,8 @@ const productos =[
         "tipo": "aditivos",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis unde quibusdam ratione rerum quia, odio quidem eveniet officiis aliquam",
         "precio": "1100",
-        "img": "/imagenes/productos/aditivo1.jpg"
+        "img": "/imagenes/productos/aditivo1.jpg",
+        "stock": 10,
     },
     {
         "id": "3",
@@ -23,7 +25,8 @@ const productos =[
         "tipo": "sustrato",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis unde quibusdam ratione rerum quia, odio quidem eveniet officiis aliquam",
         "precio": "1200",
-        "img": "/imagenes/productos/accesorio4.png"
+        "img": "/imagenes/productos/accesorio4.png",
+        "stock": 10,
     },
     {
         
@@ -32,7 +35,8 @@ const productos =[
         "tipo": "parafernalia",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis unde quibusdam ratione rerum quia, odio quidem eveniet officiis aliquam",
         "precio": 1200,
-        "img": "/imagenes/productos/combo1.jpg"
+        "img": "/imagenes/productos/combo1.jpg",
+        "stock": 10,
     },
     {
         "id": "5",
@@ -40,7 +44,8 @@ const productos =[
         "tipo": "aditivos",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis unde quibusdam ratione rerum quia, odio quidem eveniet officiis aliquam",
         "precio": "1100",
-        "img": "/imagenes/productos/aditivo1.jpg"
+        "img": "/imagenes/productos/aditivo1.jpg",
+        "stock": 10,
     },
     {
         "id": "6",
@@ -48,7 +53,8 @@ const productos =[
         "tipo": "sustrato",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis unde quibusdam ratione rerum quia, odio quidem eveniet officiis aliquam",
         "precio": "1200",
-        "img": "/imagenes/productos/accesorio4.png"
+        "img": "/imagenes/productos/accesorio4.png",
+        "stock": 10,
     }]
  export const getFetch = new Promise((resolve , reject)=>{
     let condicion = true
