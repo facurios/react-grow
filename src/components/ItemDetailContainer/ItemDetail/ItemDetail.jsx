@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ItemCount from '../../Count/ItemCount'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../CartContext/CartContext'
 
 
 
 function ItemDetail({producto}) {
+    const {cartList, addCart} = useContext(CartContext)
+    
+
     const [mostrar, setMostrar] = useState(true)
     const onAdd = (cant) => {
         setMostrar(false)
-        alert(cant)
-        //agregarAlCarrito({...producto, cantidad: cant})
+        addCart({...producto, cantidad: cant})
     }
-
+    console.log(cartList)
     return (
         <div className='row'>
             <center >

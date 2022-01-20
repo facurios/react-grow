@@ -5,6 +5,8 @@ import NavBar from './components/NavBar/NavBar';
 import React from 'react';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
+import { CartContextProvider } from './components/CartContext/CartContext';
+
 
 
 
@@ -12,16 +14,18 @@ import Cart from './components/Cart/Cart';
 function App() {
   
   return (
-
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route exact path='/' element={<ItemListContainer  greeting="Bienvenido a mi tienda Online"/>} />
-          <Route exact path='/categoria/:idCategoria' element={<ItemListContainer greeting='Bienvenido a mi tienda Online'/>}/>
-          <Route exact path='/detalle/:idDetalle' element={<ItemDetailContainer/>} />
-          <Route exact path='/cart' element={<Cart/>} />
-        </Routes>
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <NavBar/>
+          <Routes>
+            <Route exact path='/' element={<ItemListContainer  greeting="Bienvenido a mi tienda Online"/>} />
+            <Route exact path='/categoria/:idCategoria' element={<ItemListContainer greeting='Bienvenido a mi tienda Online'/>}/>
+            <Route exact path='/detalle/:idDetalle' element={<ItemDetailContainer/>} />
+            <Route exact path='/cart' element={<Cart/>} />
+          </Routes>
+        </BrowserRouter>
+      </CartContextProvider>
+      
   );
 }
 
