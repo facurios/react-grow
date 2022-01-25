@@ -1,5 +1,5 @@
 //creacion del contexto
-import {createContext, useState } from "react";
+import React, {createContext, useState } from "react";
 
 export const CartContext = createContext([])
 
@@ -41,14 +41,27 @@ export const CartContextProvider = ({children}) =>{
         let suma = cartList.reduce((acum, valor)=> (acum + (valor.cantidad*valor.precio)),0)
         return (suma)}
 
-
+    function carritoVacio(){
+        
+        if(cartList.length===0){
+            return (true)
+        }else{
+            return(false)
+        }
+    }
+    function totalItems(){
+        let total= cartList.reduce((acum, prod)=>acum + prod.cantidad, 0 )
+       return(total)
+    }
     return(
         <CartContext.Provider value={{
             cartList,
             addCart,
             vaciarCarrito,
             borrarItem,
-            total
+            total,
+            carritoVacio,
+            totalItems
         }
             
         }>

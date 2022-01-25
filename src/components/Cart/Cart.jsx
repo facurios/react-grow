@@ -1,13 +1,22 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../CartContext/CartContext'
 
 
 
 function Cart() {
-   const {cartList, vaciarCarrito, borrarItem, total} = useContext(CartContext)
+   const {cartList, vaciarCarrito, borrarItem, total, carritoVacio} = useContext(CartContext)
   
     return (
-        <center className=' me-mt-3'>
+      <>{carritoVacio()?
+      <div>
+      <h3>El carrito esta vacio</h3>
+      <Link to='/'><button type="button" className="btn btn-success">Ir a comprar</button></Link>
+      </div>
+      :
+      
+      
+      <center className=' me-mt-3'>
           <table className='table align-middle text-center'>
             <thead>
               <tr>
@@ -46,7 +55,10 @@ function Cart() {
                   
                   <button className='btn btn-danger btn-lg' onClick={vaciarCarrito} > Vaciar Carrito</button>
 
-          </center>        
+          </center>
+      }
+      </>
+                
             
           
           
