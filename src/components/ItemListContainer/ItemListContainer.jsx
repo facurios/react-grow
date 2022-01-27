@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
-import { getFetch } from '../ItemList/mock'
+import {collection, getFirestore, query, getDocs, where} from 'firebase/firestore'
 
 import './ItemListContainer.css'
 
@@ -13,21 +13,28 @@ function ItemListContainer({greeting}) {
     console.log(idCategoria)
     
     useEffect(() => {
-        if (idCategoria) {
-            getFetch
-            .then(resp => setProductos(resp.filter(rubro => rubro.tipo === idCategoria)))
-            .catch(err=>console.log(err))
-            .finally(()=> setLoanding(false))
+        
+        const db = getFirestore()
+
+          if (idCategoria === undefined) {
+            const queryCollection = query(collection(db, 'items'))
+            getDocs(queryCollection)
+            .then(resp => setProductos(resp.docs.map(prod => ({id: prod.id, ...prod.data()}) )))
+            .catch(err=> err)
+            .finally(setLoanding(false))
+
          }
     
-          else {
-        
-            getFetch
-            .then(resp => setProductos(resp))
-            .catch(err=>console.log(err))
-            .finally(()=> setLoanding(false)) 
-    }
+           else {
+            const queryCollection = query(collection(db, 'items'), where('category', '==', idCategoria))
+            getDocs(queryCollection)
+            .then(resp => setProductos(resp.docs.map(prod => ({id: prod.id, ...prod.data()}) )))
+            .catch(err=> err)
+            .finally(setLoanding(false))
+
+     } 
     },[idCategoria])
+    console.log(productos)
     return (
         
         <div className='col-md-12'>

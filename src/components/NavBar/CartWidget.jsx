@@ -8,7 +8,7 @@ function CartWidget() {
     return (
         <div >
             <button className='btn btn-secondary botonCart' ><FaShoppingCart/>
-            { totalItems()===0 ? <p></p> :<p class="badge bg-secundary">{totalItems()}</p>}
+            { totalItems()===0 ? <p></p> :<p className="badge bg-secundary">{totalItems()}</p>}
             </button>
         </div>
     )

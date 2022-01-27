@@ -12,8 +12,8 @@ function NavBar() {
             </Link>
             <div className='col-md-8'>
                 <div className='navBar'>
-                    <NavLink to={`/categoria/parafernalia`} className='btn btn-primary boton'>Parafernalia</NavLink>
-                    <NavLink to={`/categoria/sustrato`} className='btn btn-success boton' >Sustratos</NavLink>
+                    <NavLink to={`/categoria/parafernalias`} className='btn btn-primary boton'>Parafernalia</NavLink>
+                    <NavLink to={`/categoria/sustratos`} className='btn btn-success boton' >Sustratos</NavLink>
                     <NavLink to={`/categoria/aditivos`} className='btn btn-danger boton' >Aditivos</NavLink>
                 </div>
             </div>

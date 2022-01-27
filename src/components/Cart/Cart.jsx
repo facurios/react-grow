@@ -22,7 +22,7 @@ function Cart() {
               <tr>
                 <th scope="col">Imagen</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">P. Unitario</th>
+                <th scope="col">Cantidad</th>
                 <th scope="col">Total</th>
                 <th scope="col">Eliminar</th>
               </tr>
@@ -30,10 +30,10 @@ function Cart() {
             <tbody>
               {cartList.map(prod => 
                   
-                      <tr>
-                        <th scope="row" key={prod.id}><img src={prod.img} alt="" style={{ width: 70}} /></th>
-                        <td>{prod.nombre}</td>
-                        <td>$ {prod.cantidad}</td>
+                      <tr key={prod.id}>
+                        <th scope="row" ><img src={prod.imgUrl} alt="" style={{ width: 70}} /></th>
+                        <td>{prod.name}</td>
+                        <td> {prod.cantidad}</td>
                         <td>$ {prod.precio * prod.cantidad}</td>
                         <td><button className='btn btn-danger btn-sm' onClick={()=>borrarItem(prod)}>X</button></td>
                       </tr>

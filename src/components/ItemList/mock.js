@@ -1,6 +1,5 @@
-
-const productos =[
-    {
+/*const productos =[
+      {
         
         "id": "1",
         "nombre": "Producto 1",
@@ -55,8 +54,9 @@ const productos =[
         "precio": "1200",
         "img": "/imagenes/productos/accesorio4.png",
         "stock": 10,
-    }]
- export const getFetch = new Promise((resolve , reject)=>{
+    } ]*/
+/*  export const getFetch = new Promise((resolve , reject)=>{
+    
     let condicion = true
     if(condicion){
         setTimeout(()=>{
@@ -66,4 +66,4 @@ const productos =[
         reject('Eror al cargar productos')
     }
 })
-
+ */

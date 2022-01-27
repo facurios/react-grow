@@ -13,6 +13,7 @@ function ItemDetail({producto}) {
     const onAdd = (cant) => {
         setMostrar(false)
         addCart({...producto, cantidad: cant})
+        console.log(cant)
     }
     console.log(cartList)
     return (
@@ -22,15 +23,15 @@ function ItemDetail({producto}) {
                 
                     <div className="row g-0">
                         <div className="card-header">
-                            {producto.tipo}
+                            {producto.category}
                         </div>
                         <div className="col-md-4">
-                        <img src={producto.img} className="img-fluid rounded-start" alt="..."/>
+                        <img src={producto.imgUrl} className="img-fluid rounded-start" alt="..."/>
                         </div>
                         <div className="col-md-4">
                             <div className="card-body">
-                                <h5 className="card-title">{producto.nombre}</h5>
-                                <p className="card-text">{producto.desc}</p>
+                                <h5 className="card-title">{producto.name}</h5>
+                                <p className="card-text">{producto.description}</p>
                                 <p className="card-text">Stock {producto.stock}</p>
                             </div>
                         </div>

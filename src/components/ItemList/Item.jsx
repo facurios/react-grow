@@ -11,14 +11,14 @@ function Item({producto}) {
             <center >
                 <div className='card col-3' >
                     <div className="card-header col-12"> 
-                        <h5 className='card-title'>{producto.tipo}</h5>
+                        <h5 className='card-title'>{producto.category}</h5>
                     </div>
                     <div className='card-body col-12'>
-                        <img src={producto.img} className='imgProd' alt='IMAGEN' style={{ width: 100}}/>
+                        <img src={producto.imgUrl} className='imgProd' alt='IMAGEN' style={{ width: 100}}/>
                     </div>
                     <div className='card-body col-12'> 
-                        <h5 className='card-title'>{producto.nombre}</h5>
-                        <p className="card-text">{producto.desc}</p>
+                        <h5 className='card-title'>{producto.name}</h5>
+                        <p className="card-text">{producto.description}</p>
                     </div>
                     <div className='card-footer col-12'>
                         <Link to={`/detalle/${producto.id}`}>
