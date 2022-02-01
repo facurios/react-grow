@@ -1,6 +1,7 @@
 //creacion del contexto
 import React, {createContext, useState } from "react";
 
+
 export const CartContext = createContext([])
 
 //creacion del componente que maneja el contexto
@@ -53,6 +54,9 @@ export const CartContextProvider = ({children}) =>{
         let total= cartList.reduce((acum, prod)=>acum + prod.cantidad, 0 )
        return(total)
     }
+
+    
+
     return(
         <CartContext.Provider value={{
             cartList,
