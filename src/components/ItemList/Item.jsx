@@ -7,14 +7,14 @@ import './Item.css'
 function Item({producto}) {
 
     return (
-        <div key={producto.id}>
-            <center >
-                <div className='card col-3' >
+        <div className='row' key={producto.id}>
+            <center>
+                <div className='card col-sm-6 cartas' >
                     <div className="card-header col-12"> 
                         <h5 className='card-title'>{producto.category}</h5>
                     </div>
                     <div className='card-body col-12'>
-                        <img src={producto.imgUrl} className='imgProd' alt='IMAGEN' style={{ width: 100}}/>
+                        <img src={producto.imgUrl} className='imgProd' alt='IMAGEN' style={{ width: 80}}/>
                     </div>
                     <div className='card-body col-12'> 
                         <h5 className='card-title'>{producto.name}</h5>

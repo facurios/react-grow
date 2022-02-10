@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react'
 import ItemCount from '../../Count/ItemCount'
 import { Link } from 'react-router-dom'
-import { CartContext } from '../../CartContext/CartContext'
+import { useCartContext } from '../../Context/CartContext'
 
 
 
 function ItemDetail({producto}) {
-    const {cartList, addCart} = useContext(CartContext)
+    const {cartList, addCart} = useCartContext()
     
 
     const [mostrar, setMostrar] = useState(true)
@@ -33,6 +33,7 @@ function ItemDetail({producto}) {
                                 <h5 className="card-title">{producto.name}</h5>
                                 <p className="card-text">{producto.description}</p>
                                 <p className="card-text">Stock {producto.stock}</p>
+                                <h5 className="card-text">$ {producto.precio}</h5>
                             </div>
                         </div>
                         <div className="col-md-3">

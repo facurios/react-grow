@@ -1,10 +1,10 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import {FaShoppingCart} from 'react-icons/fa'
-import { CartContext } from '../CartContext/CartContext'
+import { useCartContext } from '../Context/CartContext'
 import './NavBar.css'
 
 function CartWidget() {
-    const {totalItems} = useContext(CartContext)
+    const {totalItems} = useCartContext()
     return (
         <div >
             <button className='btn btn-secondary botonCart' ><FaShoppingCart/>

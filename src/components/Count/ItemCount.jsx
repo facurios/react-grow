@@ -21,7 +21,12 @@ function ItemCount({item, onAdd}) {
                 <button onClick={handleresta} className='btn btn-danger btn-sm'>-</button>
                 <button onClick={handlesuma} className='btn btn-primary btn-sm'>+</button>
             </div>
-            <button type="button" onClick={() => onAdd(contador)} className="btn btn-success btn-sm">Agregar al carrito</button>
+            {item.stock !== 0 ?
+                <button type="button" onClick={() => onAdd(contador)} className="btn btn-success btn-sm">Agregar al carrito</button>
+                :
+                <button type="button" onClick={() => onAdd(contador)} className="btn btn-success btn-sm disabled">Agregar al carrito</button>
+            }
+            
         </div>
     )
 }

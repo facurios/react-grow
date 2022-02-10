@@ -19,7 +19,9 @@ function ItemDetailContainer() {
     },[idDetalle])
     return (
         <div>
-            {  loanding ? <h2>Cargando...</h2> :
+            {  loanding ? <div className="spinner-border text-primary" role="status">
+                                 <span className="visually-hidden">Loading...</span>
+                        </div> :
             <ItemDetail producto={producto} />}
         </div>
     )
