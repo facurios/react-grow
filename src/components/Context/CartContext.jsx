@@ -1,52 +1,45 @@
-import { createContext, useState, useContext} from "react";
-
+import { createContext, useState, useContext } from "react";
 
 const CartContext = createContext([])
 
-export function useCartContext(){
+export function useCartContext() {
     return useContext(CartContext)
 }
 
-export const CartContextProvider = ({children}) => {
+export const CartContextProvider = ({ children }) => {
 
     const [cartList, setCartList] = useState([])
 
-    function totalItems(){
-    
-        const totalProductos=cartList.map(productosCart=>productosCart.cantidad).reduce((prev,curr) => prev+curr,0)
-               
-    return totalProductos
+    function totalItems() {
+        const totalProductos = cartList.map(productosCart => productosCart.cantidad).reduce((prev, curr) => prev + curr, 0)
+        return totalProductos
     }
 
-    function total(){
-
-        const totalPrecio =cartList.map(totalCart=>totalCart.cantidad*totalCart.precio).reduce((prev,curr)=> prev+curr,0)
-
-    return totalPrecio
+    function total() {
+        const totalPrecio = cartList.map(totalCart => totalCart.cantidad * totalCart.precio).reduce((prev, curr) => prev + curr, 0)
+        return totalPrecio
     }
-    
+
     function addCart(items) {
-        
-        const indice=cartList.findIndex(i => i.id === items.id)
-       
-        if (indice > -1){
-            const qtyVieja=cartList[indice].qty
-            let qtyNueva= qtyVieja + items.qty
-            cartList[indice].qty=qtyNueva
+        const indice = cartList.findIndex(i => i.id === items.id)
+        if (indice > -1) {
+            const qtyVieja = cartList[indice].qty
+            let qtyNueva = qtyVieja + items.qty
+            cartList[indice].qty = qtyNueva
             let arrAux = [...cartList]
             setCartList(arrAux)
 
-        }else{
+        } else {
             setCartList([...cartList, items])
         }
     }
 
 
-    function vaciarCarrito(){
+    function cartEmpty() {
         setCartList([])
     }
 
-    function borrarItem(itemId){
+    function removeItem(itemId) {
         const index = cartList.findIndex(prod => prod.id === itemId)
         console.log(index)
         cartList.splice(index, 1)
@@ -54,18 +47,18 @@ export const CartContextProvider = ({children}) => {
         setCartList(array)
     }
 
-    
-    return(
-        <CartContext.Provider value ={{
+
+    return (
+        <CartContext.Provider value={{
             cartList,
             addCart,
-            borrarItem,
-            vaciarCarrito,
+            removeItem,
+            cartEmpty,
             total,
             totalItems,
-            }}
-     > 
-     {children}
-     </CartContext.Provider>
+        }}
+        >
+            {children}
+        </CartContext.Provider>
     )
 }

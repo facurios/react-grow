@@ -1,32 +1,24 @@
-import { createContext, useState, useContext} from "react";
+import { createContext, useState, useContext } from "react"
 
 const OrdenContext = createContext([])
 
-export function useOrdenContext(){
+export function useOrdenContext() {
     return useContext(OrdenContext)
 }
 
-export const OrdenContextProvider = ({children}) => {
+export const OrdenContextProvider = ({ children }) => {
 
-    const [ordenCompra, setOrdenCompra] = useState({})
+    const [orderBuy, setOrderBuy] = useState({})
 
-
-    function nuevaOrden(dataForm){
-        setOrdenCompra(dataForm)
+    function newOrder(dataForm) {
+        setOrderBuy(dataForm)
     }
-    function vaciarOrden(){
-        setOrdenCompra([])
-    }
-
-
-
-    return(<OrdenContext.Provider value={{
-                ordenCompra,
-                vaciarOrden,
-                nuevaOrden,
-                }}
-        > 
+    return (<OrdenContext.Provider value={{
+        orderBuy,
+        newOrder,
+    }}
+    >
         {children}
-        </OrdenContext.Provider>
+    </OrdenContext.Provider>
     )
 }

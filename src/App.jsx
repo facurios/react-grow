@@ -20,11 +20,11 @@ function App() {
           <Routes>
             <Route exact path='/' element={<ItemListContainer  greeting="Bienvenido a mi tienda Online"/>} />
             <Route exact path='/categoria/:idCategoria' element={<ItemListContainer greeting='Bienvenido a mi tienda Online'/>}/>
-            <Route exact path='/detalle/:idDetalle' element={<ItemDetailContainer/>} />
+            <Route exact path='/detalle/:idDetail' element={<ItemDetailContainer/>} />
             <Route exact path ='/cart' element={<Cart />}/>
             <Route exact path ='/cart/CheckOut' element={<CheckOut />}/>
             <Route exact path ='/cart/ProcessOrder' element={<ProcessOrder />}/>
-            <Route exact path ='/cart/Order/:idOrden' element={<Order />}/>
+            <Route exact path ='/cart/Order/:idOrder' element={<Order />}/>
           </Routes>
         </BrowserRouter>
         </OrdenContextProvider>

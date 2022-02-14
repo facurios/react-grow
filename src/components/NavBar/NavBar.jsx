@@ -1,6 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
-import React from 'react'
-import logo from '../../img/logo.png' 
+import logo from '../../img/logo.png'
 import CartWidget from './CartWidget'
 import './NavBar.css'
 
@@ -17,11 +16,9 @@ function NavBar() {
                     <NavLink to={`/categoria/aditivos`} className='btn btn-danger boton' >Aditivos</NavLink>
                 </div>
             </div>
-                <Link className='col-md-2 ' to='cart'>
-                    <CartWidget/>
-                </Link>
-                    
-                
+            <Link className='col-md-2 ' to='cart'>
+                <CartWidget />
+            </Link>
         </div>
     )
 }
